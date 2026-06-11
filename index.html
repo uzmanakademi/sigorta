@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sigorta Panel</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html, body{
+height:100%;
+overflow:hidden;
+font-family:Arial;
+background:#f2f2f2;
+}
+
+body{
+display:grid;
+place-items:center;
+height:100dvh;
+}
+
+.panel{
+display:flex;
+flex-direction:column;
+gap:14px;
+width:90%;
+max-width:320px;
+}
+
+button{
+width:100%;
+padding:18px;
+font-size:20px;
+border:none;
+border-radius:12px;
+background:#0057b8;
+color:white;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+button:active{
+transform:scale(0.98);
+}
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+<button onclick="openSite('https://acente.atlasmutuel.com.tr/')">ATLAS</button>
+<button onclick="openSite('https://portal.dogasigorta.com/')">DOĞA</button>
+<button onclick="openSite('https://acente.hepiyi.com.tr/')">HEPİYİ</button>
+<button onclick="openSite('https://portal.quicksigorta.com/')">QUICK</button>
+<button onclick="openSite('https://ejento.somposigorta.com.tr/')">SOMPO</button>
+<button onclick="openAll()">HEPSİ</button>
+</div>
+
+<script>
+function openSite(url){
+window.location.href = url;
+}
+
+function openAll(){
+const sites = [
+"https://acente.atlasmutuel.com.tr/",
+"https://portal.dogasigorta.com/",
+"https://acente.hepiyi.com.tr/",
+"https://portal.quicksigorta.com/",
+"https://ejento.somposigorta.com.tr/"
+];
+
+sites.forEach(url => window.open(url, "_blank"));
+}
+</script>
+
+</body>
+</html>
